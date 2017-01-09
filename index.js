@@ -92,7 +92,7 @@ generateImage()
           console.log(`Tweet posted: ${tweet.text}`.bold);
           console.log('Done!'.rainbow);
         }
-        return;
+        return Promise.resolve();
       })
       .catch(function(e){
         return Promise.reject(e[0].message);
