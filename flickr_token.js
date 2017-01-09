@@ -19,7 +19,7 @@ prompt('api key: ')
       })
   })
   .then(function(settings){
-    flickr
+    return flickr
       .request()
       .authentication()
       .prepareRequestToken('https://www.flickr.com/')
@@ -73,6 +73,10 @@ prompt('api key: ')
         }
 
         console.log(info);
-        process.exit();
+        prompt.done();
       });
+  })
+  .catch(function rejected(e){
+    console.log(e);
+    prompt.finish();
   });

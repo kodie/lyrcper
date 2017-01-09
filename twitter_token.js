@@ -30,19 +30,27 @@ prompt('api key: ')
         prompt('pin: ')
           .then(function(pin){
             twitter.getAccessToken(requestToken, requestTokenSecret, pin, function(error, accessToken, accessTokenSecret, results) {
-              var info = {
-                "twitter": {
-                  "api_key" : settings.apiKey,
-                  "api_secret": settings.apiSecret,
-                  "access_token": accessToken,
-                  "access_token_secret": accessTokenSecret
+              if (!error) {
+                var info = {
+                  "twitter": {
+                    "api_key" : settings.apiKey,
+                    "api_secret": settings.apiSecret,
+                    "access_token": accessToken,
+                    "access_token_secret": accessTokenSecret
+                  }
                 }
-              }
 
-              console.log(info);
-              process.exit();
+                console.log(info);
+                prompt.done();
+              } else {
+                console.log(error);
+                prompt.finish();
+              }
             });
           })
-      } else { throw error; }
+      } else {
+        console.log(error);
+        prompt.finish();
+      }
     });
   });
