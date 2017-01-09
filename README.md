@@ -2,6 +2,9 @@
 
 A Twitter bot that posts randomly generated wallpapers with song lyrics.
 
+## Usage
+`node index.js`
+
 ## Installation
 1. Clone this repository.
 2. `cd lyrcper`
@@ -13,8 +16,9 @@ A Twitter bot that posts randomly generated wallpapers with song lyrics.
 1. Create a free Musixmatch account here: https://developer.musixmatch.com/signup
 2. Go to the account verification link that they sent to your e-mail and log in to your new account.
 3. Go to the applications section of your dashboard here: https://developer.musixmatch.com/admin/applications
+4. You should see "(Your Username)'s App". Click on the "View" link to the right of that.
 
-Your API key will be in the center column, next to "(Your Username)'s App".
+Your API key will then be displayed.
 
 ### How to get Flickr API credentials
 
