@@ -97,6 +97,6 @@ generateImage()
         throw error;
       })
   })
-  .catch(function(error) {
-    throw error;
+  .catch(function(e) {
+    if (!settings.mute) { console.log(new Error(e)); }
   });
