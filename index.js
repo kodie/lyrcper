@@ -86,17 +86,18 @@ generateImage()
     if (text.length > 116) { text = text.substr(0, (116 - 3)) + '...'; }
     text = text + ' ' + r.image.url;
 
-    twitClient.post('statuses/update', {status: text})
-      .then(function(tweet) {
+    return twitClient.post('statuses/update', {status: text})
+      .then(function(tweet){
         if (!settings.mute) {
           console.log(`Tweet posted: ${tweet.text}`.bold);
           console.log('Done!'.rainbow);
         }
+        return;
       })
-      .catch(function(error) {
-        throw error;
+      .catch(function(e){
+        return Promise.reject(e[0].message);
       })
   })
-  .catch(function(e) {
+  .catch(function(e){
     if (!settings.mute) { console.log(new Error(e)); }
   });
