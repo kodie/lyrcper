@@ -24,13 +24,13 @@ Your API key will be in the center column, next to "(Your Username)'s App".
 
 Your API key and secret will be displayed after creating the app.
 
-#### User ID and Access token/secret
+#### Access token/secret
 1. `cd` into the directory where you cloned the lyrcper repository.
 2. `npm install prompt-promise opn`
 3. `node flickr_token.js`
 4. Follow the on-screen directions.
 
-Your user ID and access token/secret will then be displayed.
+Your access token and secret will then be displayed.
 
 ### How to get Twitter API credentials
 
