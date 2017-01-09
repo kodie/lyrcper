@@ -23,14 +23,14 @@ var twitClient = new Twitter({
 });
 
 function generateImage() {
-  return new Promise(function (fulfill, reject){
+  return new Promise(function(fulfill, reject){
     var imgSettings = {
       file: 'image.png',
       flickr_api_key: settings.flickr.api_key,
       flickr_api_secret: settings.flickr.api_secret
     };
 
-    imgSettings = Object.assign({}, imgSettings, settings);
+    imgSettings = Object.assign({}, settings, imgSettings);
 
     lyricPaper(imgSettings, function(err, res) {
       if (!err) {
@@ -42,7 +42,7 @@ function generateImage() {
 
 function uploadImage(imgInfo) {
   if (!settings.mute) { console.log(`Uploading image...`.dim); }
-  return new Promise(function (fulfill, reject){
+  return new Promise(function(fulfill, reject){
     flickr
       .request(settings.flickr.access_token, settings.flickr.access_token_secret)
       .media()
