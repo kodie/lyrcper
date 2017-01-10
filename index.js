@@ -26,8 +26,7 @@ function generateImage() {
   return new Promise(function(fulfill, reject){
     var imgSettings = {
       file: 'image.png',
-      flickr_api_key: settings.flickr.api_key,
-      flickr_api_secret: settings.flickr.api_secret
+      flickr_api_key: settings.flickr.api_key
     };
 
     imgSettings = Object.assign({}, settings, imgSettings);
