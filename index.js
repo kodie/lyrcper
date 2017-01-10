@@ -75,7 +75,10 @@ generateImage()
       .then(function(i){
         r.image.url = getImgUrl(i);
         if (!settings.mute) { console.log(`Image URL: ${r.image.url}`.bold); }
-        return r;
+        return Promise.resolve(r);
+      })
+      .catch(function(e){
+        return Promise.reject(e.message);
       });
   })
   .then(function(r){
